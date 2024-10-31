@@ -1,4 +1,4 @@
-my-snowflake-db:
+jaffle_shop:
   target: dev
   outputs:
     dev:
