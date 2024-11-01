@@ -1,22 +1,24 @@
-with source as (
+{{ config(
+    materialized='table'
+) }}
 
-    {#-
-    Normally we would select from the table here, but we are using seeds to load
-    our data in this project
-    #}
-    select * from {{ source('bootcamp', 'js_raw_customers') }}
+with
+    staging as (
+        select
+            id
+            , first_name
+            , last_name
+            , last_updated_dt
+            , country_code
+            , dbt_valid_to
+            , dbt_valid_from
+            , row_number() over(
+                partition by id
+                order by dbt_valid_to desc
+            ) as row_num
+        from {{ ref('snapshot_customers') }}
+    )
 
-),
-
-renamed as (
-
-    select
-        id as customer_id,
-        first_name,
-        last_name
-
-    from source
-
-)
-
-select * from renamed
+select *
+from staging
+where row_num = 1
