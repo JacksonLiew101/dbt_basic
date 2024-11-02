@@ -5,10 +5,9 @@ with
             , user_id
             , order_date
             , status
-            , last_updated_dt
         from {{ ref('stg_orders') }}
     )
-    
+
     , stg_payments as (
         select
             id
@@ -17,7 +16,7 @@ with
             , amount
         from {{ ref('stg_payments') }}
     )
-    
+
     , payment_methods_agg as (
         select
             order_id
@@ -26,7 +25,7 @@ with
         from stg_payments
         group by order_id
     )
-    
+
     , joined as (
         select
             stg_orders.id

@@ -26,6 +26,3 @@ models:
                 - completed
                 - placed
                 - shipped
-      - name: last_updated_dt
-        data_tests:
-          - not_null

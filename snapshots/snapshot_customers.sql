@@ -2,7 +2,7 @@
 
 {{
     config(
-      target_database='academy',
+      target_database='dataexpert_student',
       target_schema=env_var('DBT_SCHEMA'),
       unique_key='id',
 
