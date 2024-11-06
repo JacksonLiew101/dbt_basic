@@ -142,6 +142,8 @@ You're good to go!
 # 📚 Other helpful resources for learning!
 
 ### dbt docs
+- [dbt best practices for enterprises](https://www.phdata.io/blog/accelerating-and-scaling-dbt-for-the-enterprise/)
+- [dbt cheat sheet](https://github.com/bruno-szdl/cheatsheets/blob/main/dbt_cheat_sheet.pdf)
 - [models](https://docs.getdbt.com/docs/build/sql-models)
 - [tests](https://docs.getdbt.com/docs/build/data-tests)
 - [sources](https://docs.getdbt.com/docs/build/sources)
