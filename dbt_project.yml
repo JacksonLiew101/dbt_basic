@@ -24,3 +24,15 @@ models:
       materialized: table
       staging:
         materialized: view
+
+seeds:
+  +docs:
+    node_color: "#BF40BF"
+
+snapshots:
+  +docs:
+    node_color: "#FFAC1C"
+
+tests:
+  +docs:
+    node_color: "#D22B2B"
