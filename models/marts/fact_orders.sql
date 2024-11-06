@@ -20,7 +20,7 @@ with
     , payment_methods_agg as (
         select
             order_id
-            , array_join(array_agg(payment_method), ', ') as payment_methods
+            , listagg((payment_method), ', ') as payment_methods
             , sum(amount) as amount
         from stg_payments
         group by order_id
